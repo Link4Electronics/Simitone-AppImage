@@ -7,7 +7,9 @@ export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+if [ "$ARCH" = "x86_64" ]; then
 export DEPLOY_DOTNET=1
+fi
 export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
 
