@@ -33,7 +33,7 @@ if ! wget --retry-connrefused --tries=30 "$ZIP_LINK" -O /tmp/app.zip 2>/tmp/down
 	cat /tmp/download.log
 	exit 1
 fi
-
+sudo pacman -S --noconfirm dotnet-runtime-9.0
 bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
 else
 bsdtar -xvf Simitone-Linux-arm64-Release.zip -C ./AppDir/bin
