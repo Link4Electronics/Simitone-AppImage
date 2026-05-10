@@ -35,11 +35,9 @@ if ! wget --retry-connrefused --tries=30 "$ZIP_LINK" -O /tmp/app.zip 2>/tmp/down
 fi
 
 bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
+else
+bsdtar -xvf Simitone-Linux-arm64-Release.zip -C ./AppDir/bin
+fi
 mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
 rm -f ./AppDir/bin/simitone.desktop
 rm -f ./AppDir/bin/lib/*.pdb
-else
-bsdtar -xvf Simitone-Linux-arm64-Release.zip -C ./AppDir/bin
-rm -f ./AppDir/bin/simitone.desktop
-rm -f ./AppDir/bin/lib/*.pdb
-fi
